@@ -22,14 +22,13 @@ var isValidCard = function(num){ //función para validar numeros de tarjeta, rec
               numTarjet.push(arrayReverse[i]); //se agregarán al arreglo las pocisiones pares para juntarlas a las pocisiones impares a las que ya se les multiplicó por dos y se sumaron las cifras de dos números
             }
       }
-      var result = [];
+      var result = []; //se guardará el resultado de sumar todos los elementos del arreglo
       for (var i=0; i<numTarjet.length;i++){
-        result= result + numTarjet[i];
-
+        result= result + numTarjet[i]; //el primer elemento se sumará al segundo elemento y asi sucesivamente
       }
-      if (result %10 ===0){
+      if (result %10 ===0){ // si la suma de todos los elementos del arreglo, al dividir entre 10 es igual a cero, la tarjeta es valida
         return "Tarjeta Valida";
-      } else {
+      } else { //si el residuo es diferente de 0 entonces la tarjeta no es valida
         return "Tarjeta Inválida";
       }
     }
